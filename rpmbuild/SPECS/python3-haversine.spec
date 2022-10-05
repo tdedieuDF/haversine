@@ -1,4 +1,3 @@
-%global srcname haversine-2.7.0
 %global debug_package ${nil}
 
 %define __python3 /usr/bin/python3.8
@@ -11,7 +10,7 @@ Group:          Application/Network
 License:        GPL
 URL:            https://github.com/mapado/haversine
 Vendor:         mapado
-Source:         https://github.com/mapado/haversine/archive/refs/tags/v2.7.0.tar.gz
+Source:         packagesource.tar.gz
 Prefix:         %{_prefix}
 Packager:       Dragonfly
 BuildRoot:      %{_tmppath}/%{name}-%{version}
@@ -23,7 +22,7 @@ Requires:       python38
 cmake middleware
 
 %prep
-%setup -n %{srcname}
+%setup -c .
 
 %build
 %{__python3} setup.py build
